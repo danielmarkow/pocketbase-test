@@ -17,38 +17,43 @@ function Login() {
   };
 
   return (
-      <div className="text-center">
-      <main className="form-signin w-100 m-auto">
-        <form onSubmit={onSubmit}>
-            <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
+      <>
+      {authData && <p>logged in</p>}
+      {!authData && (
+        <div className="text-center">
+        <main className="form-signin w-100 m-auto">
+          <form onSubmit={onSubmit}>
+              <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
 
-            <div className="form-floating">
-              <input
-                  type="input"
-                  className="form-control"
-                  id="emailInput"
-                  placeholder="name@example.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-              />
-                <label htmlFor="emailInput">Email address</label>
-            </div>
-            <div className="form-floating">
-              <input
-                  type="password"
-                  className="form-control"
-                  id="passwordInput"
-                  placeholder="Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-              />
-                <label htmlFor="passwordInput">Password</label>
-            </div>
+              <div className="form-floating">
+                <input
+                    type="input"
+                    className="form-control"
+                    id="emailInput"
+                    placeholder="name@example.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+                  <label htmlFor="emailInput">Email address</label>
+              </div>
+              <div className="form-floating">
+                <input
+                    type="password"
+                    className="form-control"
+                    id="passwordInput"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+                  <label htmlFor="passwordInput">Password</label>
+              </div>
 
-            <button className="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-        </form>
-      </main>
-      </div>
+              <button className="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+          </form>
+        </main>
+        </div>
+      )}
+      </>
   );
 }
 
